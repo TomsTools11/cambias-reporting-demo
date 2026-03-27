@@ -41,6 +41,10 @@
             padding: 40px;
         }
 
+        .back-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; font-size: 13px; font-weight: 600; color: var(--goal-brand); background: white; border: 1px solid var(--border-gray); border-radius: 8px; text-decoration: none; margin-bottom: 20px; transition: border-color 0.2s, box-shadow 0.2s; }
+        .back-btn:hover { border-color: var(--goal-brand); box-shadow: 0 2px 8px rgba(7,123,229,0.1); }
+        @media print { .back-btn { display: none; } }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -1022,7 +1026,8 @@
 </head>
 <body>
     <div class="container">
-        
+        <a class="back-btn" href="index.html">&larr; Back</a>
+
         <div class="header">
             <h1>Cambias Insurance Agency</h1>
             <p>Louisiana Home Campaign — 30-Day Performance Review</p>

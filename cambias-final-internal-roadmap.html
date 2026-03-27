@@ -39,12 +39,15 @@
   .act.p3 { border-left: 4px solid #077BE5; }
   .act.inv { border-left: 4px solid #F59E0B; }
   .ft { text-align: center; padding: 20px; color: #9CA3AF; font-size: 12px; }
-  @media print { body { background: white; } .cd { box-shadow: none; break-inside: avoid; } }
+  .back-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; font-size: 13px; font-weight: 600; color: #077BE5; background: white; border: 1px solid #E5E7EB; border-radius: 8px; text-decoration: none; margin-bottom: 20px; transition: border-color 0.2s, box-shadow 0.2s; }
+  .back-btn:hover { border-color: #077BE5; box-shadow: 0 2px 8px rgba(7,123,229,0.1); }
+  @media print { .back-btn { display: none; } body { background: white; } .cd { box-shadow: none; break-inside: avoid; } }
   @media (max-width: 768px) { .kg { grid-template-columns: repeat(2, 1fr); } }
 </style>
 </head>
 <body>
 <div class="ct">
+  <a class="back-btn" href="index.html">&larr; Back</a>
 
   <header class="hdr">
     <div class="hdr-tag">Internal Analysis &mdash; Not for Client Distribution</div>
