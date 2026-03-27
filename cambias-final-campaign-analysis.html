@@ -91,7 +91,7 @@
       <p class="prose">Cambias Insurance Agency's LA Home campaign is spending <strong>$647/day</strong> against a <strong>$1,000/day target</strong>&mdash;a 54% gap. This analysis combines the four-layer diagnostic framework with a full right-pricing calibration against trailing 7-day RightPricing data for LA Home. Two compounding problems emerged:</p>
       <p class="prose"><strong>1) The day-parting schedule suppresses all bids to 40&ndash;60% of their configured value</strong> during active hours and shuts off entirely 9 PM&ndash;5 AM. This is the single largest volume throttle. At the average 52% modifier, a $17.46 base bid (volume-weighted average) becomes only $9.08 effective at auction.</p>
       <p class="prose"><strong>2) The source multipliers are severely mis-proportioned relative to market pricing.</strong> Right-pricing reveals Tier 3 (the most expensive referral source at $16.44 1st position) is set to the <em>lowest</em> multiplier (100%), while Tier 1 (cheapest at $8.33) is set to the <em>highest</em> referral multiplier (136%). The campaign is over-paying on cheap traffic and under-paying on expensive traffic, explaining Tier 3's 9.2% win rate.</p>
-      <p class="prose">The fix is a combined two-move strategy: <strong>raise the schedule to 80%</strong> (lifts all effective bids proportionally) and <strong>right-price the source multipliers</strong> (corrects the relative proportions). Together, these changes should close the volume gap to $1,000/day while actually improving blended CPA by eliminating overpay on sources like Home Search (currently 345% vs right-priced 200%).</p>
+      <p class="prose">The fix is a combined two-move strategy: <strong>raise the schedule to 80%</strong> (lifts all effective bids proportionally) and <strong>right-price the source multipliers</strong> (corrects the relative proportions). Together, these changes should close the volume gap to $1,000/day while actually improving blended CPA by eliminating overpay on sources like Home Search (currently 345% vs right-priced 135%).</p>
       <div style="margin-top:12px;">
         <span class="badge red">Root Cause: Schedule Suppression + Multiplier Mis-Calibration</span>
       </div>
@@ -130,7 +130,7 @@
   <div class="card">
     <div class="card-head"><span class="card-num">4</span><span class="card-title">Right-Pricing Calibration (LA Home &mdash; Trailing 7 Days)</span></div>
     <div class="card-body">
-      <div class="alert blue"><span style="flex-shrink:0;font-size:14px;">&#8505;</span><span><strong>Market Structure:</strong> This market is heavily concentrated at 1st position&mdash;94% of Tier 2 clicks and 95% of Tier 1 clicks occur at 1st position. 2nd position delivers only 7&ndash;19 clicks/week per source. Given the client's aggressive volume objective ($1,000/day), the right-pricing targets 1st position with a 15% geo-buffer. Anchor: <strong>Tier 2 @ 1st position ($12.31)</strong>&mdash;highest-volume source (383 weekly clicks), mid-range cost.</span></div>
+      <div class="alert blue"><span style="flex-shrink:0;font-size:14px;">&#8505;</span><span><strong>Market Structure:</strong> This market is heavily concentrated at 1st position&mdash;94% of Tier 2 clicks and 95% of Tier 1 clicks occur at 1st position. 2nd position delivers only 7&ndash;19 clicks/week per source. Given the client's aggressive volume objective ($1,000/day), right-pricing uses adaptive logic for this concentrated market. With 90&ndash;95% of clicks at 1st position, 2nd-position data is unreliable. Anchor: <strong>Tier 2 @ 2nd position ($10.32)</strong> with 15% geo-buffer &rarr; Target: $11.87. Sources with &gt;50% 1st-to-2nd gap target ~90% of 1st-position RPC; sources with no 2nd-position data target ~80% of 1st.</span></div>
 
       <div class="tbl-wrap">
         <table>
@@ -144,10 +144,10 @@
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#10B981;">$12.31</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$11.87</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">133%</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">100%</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-33pp</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">85%</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-48pp</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;color:#9CA3AF;">$12.08</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;">$13.97</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;">$11.87</td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 14px;border-bottom:1px solid #E5E7EB;">Tier 1</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">261</td>
@@ -155,10 +155,10 @@
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#10B981;">$8.33</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$7.68</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">136%</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">70%</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-66pp</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">55%</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-81pp</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;color:#9CA3AF;">$12.35</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;">$6.98</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;">$7.68</td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 14px;border-bottom:1px solid #E5E7EB;">Tier 3</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">196</td>
@@ -177,10 +177,10 @@
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#10B981;">$11.31</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$10.48</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">150%</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">90%</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-60pp</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">75%</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-75pp</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;color:#9CA3AF;">$13.62</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;">$12.57</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;">$10.48</td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 14px;border-bottom:1px solid #E5E7EB;">Home Search</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">122</td>
@@ -188,10 +188,10 @@
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#10B981;">$24.57</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$18.86</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">345%</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">200%</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-145pp</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">135%</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-210pp</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;color:#9CA3AF;">$31.32</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;">$27.94</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;">$18.86</td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 14px;border-bottom:1px solid #E5E7EB;">PPS4 <span style="background:#FEF3C7;color:#92400E;padding:2px 6px;border-radius:4px;font-size:9px;font-weight:700;">THIN DATA</span></td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">9</td>
@@ -199,19 +199,19 @@
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#10B981;">$7.73</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$6.29</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">100%</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">65%</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-35pp</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">45%</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-55pp</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;color:#9CA3AF;">$9.08</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;">$9.08</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;">$6.29</td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 14px;border-bottom:1px solid #E5E7EB;">Internal SEO <span style="background:#FEF3C7;color:#92400E;padding:2px 6px;border-radius:4px;font-size:9px;font-weight:700;">THIN DATA</span></td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">1</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">100%</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#10B981;">$8.50</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$9.77</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$6.98</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">118%</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">70%</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-48pp</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">50%</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-68pp</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;color:#9CA3AF;">$10.71</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;">$6.98</td>
         </tr><tr>
@@ -221,17 +221,17 @@
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#10B981;">$2.35</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$2.10</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;">105%</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">20%</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-85pp</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">15%</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-90pp</td>
           <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;color:#9CA3AF;">$9.53</td>
-          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;">$2.79</td>
+          <td style="text-align:right;padding:10px 14px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;">$2.10</td>
         </tr></tbody>
         </table>
       </div>
 
       <div style="font-size:12px;color:var(--g500);margin-top:12px;padding:10px;background:var(--g50);border-radius:6px;">
         <strong>Effective bid formula:</strong> Vol-Wtd Base ($17.46) &times; Multiplier &times; Schedule (Current 52% | Recommended 80%)
-        <br><strong>Right-priced modifier formula:</strong> (Source 1st RPC &times; 1.15 geo-buffer) / Anchor Target ($11.87) &times; 100
+        <br><strong>Right-priced modifier formula:</strong> Adaptive concentrated-market logic. Target eff bid (between 2nd and 1st position) / (Base Bid &times; Schedule) &times; 100. Anchor: Tier 2 2nd pos ($10.32) &times; 1.15 geo = $11.87.
       </div>
     </div>
   </div>
@@ -256,11 +256,11 @@
           </div>
           <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-top:4px;">
             <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;"></div>
-            <div style="height:100%;width:52%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
+            <div style="height:100%;width:43%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
           </div>
           <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#077BE5;">
             <div style="width:10px;height:10px;background:#077BE5;border-radius:2px;"></div>
-            Right-Priced: $13.97 (100% × $17.46 × 80% sched)
+            Right-Priced: $11.87 (85% × $17.46 × 80% sched)
           </div>
         </div><div style="margin-bottom:20px;">
           <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;">
@@ -277,11 +277,11 @@
           </div>
           <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-top:4px;">
             <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;"></div>
-            <div style="height:100%;width:53%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
+            <div style="height:100%;width:42%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
           </div>
           <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#077BE5;">
             <div style="width:10px;height:10px;background:#077BE5;border-radius:2px;"></div>
-            Right-Priced: $6.98 (70% × $17.46 × 80% sched)
+            Right-Priced: $7.68 (55% × $17.46 × 80% sched)
           </div>
         </div><div style="margin-bottom:20px;">
           <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;">
@@ -298,7 +298,7 @@
           </div>
           <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-top:4px;">
             <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;"></div>
-            <div style="height:100%;width:52%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
+            <div style="height:100%;width:40%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
           </div>
           <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#077BE5;">
             <div style="width:10px;height:10px;background:#077BE5;border-radius:2px;"></div>
@@ -319,11 +319,11 @@
           </div>
           <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-top:4px;">
             <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;"></div>
-            <div style="height:100%;width:51%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
+            <div style="height:100%;width:42%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
           </div>
           <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#077BE5;">
             <div style="width:10px;height:10px;background:#077BE5;border-radius:2px;"></div>
-            Right-Priced: $12.57 (90% × $17.46 × 80% sched)
+            Right-Priced: $10.48 (75% × $17.46 × 80% sched)
           </div>
         </div><div style="margin-bottom:20px;">
           <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;">
@@ -340,11 +340,11 @@
           </div>
           <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-top:4px;">
             <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;"></div>
-            <div style="height:100%;width:52%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
+            <div style="height:100%;width:35%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
           </div>
           <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#077BE5;">
             <div style="width:10px;height:10px;background:#077BE5;border-radius:2px;"></div>
-            Right-Priced: $27.94 (200% × $17.46 × 80% sched)
+            Right-Priced: $18.86 (135% × $17.46 × 80% sched)
           </div>
         </div>
       <div style="display:flex;gap:16px;margin-top:16px;padding-top:12px;border-top:1px solid var(--g100);font-size:12px;color:var(--g500);">
@@ -372,7 +372,7 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">297</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$5,529</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">136%</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">70%</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">55%</td>
           <td style="text-align:center;padding:10px 12px;border-bottom:1px solid #E5E7EB;"><span style="display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;background:#F3F4F6;color:#6B7280;">Normal</span></td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 12px;border-bottom:1px solid #E5E7EB;">Tier 2</td>
@@ -382,7 +382,7 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">222</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$3,498</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">133%</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">100%</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">85%</td>
           <td style="text-align:center;padding:10px 12px;border-bottom:1px solid #E5E7EB;"><span style="display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;background:#F0FDF4;color:#16A34A;">Performing Well</span></td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 12px;border-bottom:1px solid #E5E7EB;">Home SearchB</td>
@@ -392,7 +392,7 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">166</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$2,990</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">150%</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">90%</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">75%</td>
           <td style="text-align:center;padding:10px 12px;border-bottom:1px solid #E5E7EB;"><span style="display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;background:#F0FDF4;color:#16A34A;">Performing Well</span></td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 12px;border-bottom:1px solid #E5E7EB;">Home Search</td>
@@ -402,7 +402,7 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">140</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$5,005</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">345%</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">200%</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">135%</td>
           <td style="text-align:center;padding:10px 12px;border-bottom:1px solid #E5E7EB;"><span style="display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;background:#F0FDF4;color:#16A34A;">Performing Well</span></td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 12px;border-bottom:1px solid #E5E7EB;">Tier 3</td>
@@ -422,7 +422,7 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">7</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$73</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">100%</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">65%</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">45%</td>
           <td style="text-align:center;padding:10px 12px;border-bottom:1px solid #E5E7EB;"><span style="display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;background:#F0FDF4;color:#16A34A;">Performing Well</span></td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 12px;border-bottom:1px solid #E5E7EB;">Internal SEO</td>
@@ -432,7 +432,7 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">0</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$0</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">118%</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">70%</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">50%</td>
           <td style="text-align:center;padding:10px 12px;border-bottom:1px solid #E5E7EB;"><span style="display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;background:#FEF2F2;color:#DC2626;">Win Rate Problem</span></td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 12px;border-bottom:1px solid #E5E7EB;">Premium Referral</td>
@@ -442,13 +442,13 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">0</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$0</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">105%</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">20%</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">15%</td>
           <td style="text-align:center;padding:10px 12px;border-bottom:1px solid #E5E7EB;"><span style="display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;background:#F3F4F6;color:#6B7280;">Low Volume</span></td>
         </tr></tbody>
         </table>
       </div>
       <div class="alert amber" style="margin-top:14px;"><span style="flex-shrink:0;font-size:14px;">&#9888;</span><span><strong>Tier 3 is the most mis-priced source.</strong> It has the highest 1st-position RPC ($16.44) of any referral source but the lowest multiplier (100%). This creates a 9.2% win rate on 692 opportunities&mdash;the campaign loses 90% of Tier 3 auctions. Right-pricing to 105% targets an effective bid of $14.67, landing at 89% of the 1st-position RPC&mdash;between 2nd and 1st position.</span></div>
-      <div class="alert blue"><span style="flex-shrink:0;font-size:14px;">&#8505;</span><span><strong>Tier 1 is the most over-priced source.</strong> At 136% multiplier, the current effective bid ($12.15) is 46% above Tier 1's 1st-position RPC ($8.33). Yet win rate is only 20%&mdash;proving the problem is structural (likely ad group overlap), not bid-related. Right-pricing to 70% saves ~$2,700/month while maintaining competitive positioning between 2nd and 1st position.</span></div>
+      <div class="alert blue"><span style="flex-shrink:0;font-size:14px;">&#8505;</span><span><strong>Tier 1 is the most over-priced source.</strong> At 136% multiplier, the current effective bid ($12.15) is 46% above Tier 1's 1st-position RPC ($8.33). Yet win rate is only 20%&mdash;proving the problem is structural (likely ad group overlap), not bid-related. Right-pricing to 55% saves ~$2,700/month while maintaining competitive positioning between 2nd and 1st position.</span></div>
     </div>
   </div>
 
@@ -459,7 +459,7 @@
       <div class="tbl-wrap">
         <table>
           <thead><tr>
-            <th>Ad Group</th><th style="text-align:right;">Base Bid</th><th style="text-align:right;">Opps</th><th style="text-align:right;">Leads (30d)</th><th style="text-align:right;">Spend (30d)</th><th style="text-align:right;">T2 Eff (100%)</th><th style="text-align:right;">T3 Eff (105%)</th>
+            <th>Ad Group</th><th style="text-align:right;">Base Bid</th><th style="text-align:right;">Opps</th><th style="text-align:right;">Leads (30d)</th><th style="text-align:right;">Spend (30d)</th><th style="text-align:right;">T2 Eff (85%)</th><th style="text-align:right;">T3 Eff (105%)</th>
           </tr></thead>
           <tbody><tr>
           <td style="font-weight:600;padding:10px 12px;border-bottom:1px solid #E5E7EB;">Louisiana (LA)</td>
@@ -467,7 +467,7 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">3,081</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">161</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$3,147</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$13.35</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$11.35</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$18.03</td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 12px;border-bottom:1px solid #E5E7EB;">ASC Home (Coastal)</td>
@@ -475,7 +475,7 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">2,621</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">158</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$2,653</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$11.69</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$9.93</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$15.78</td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 12px;border-bottom:1px solid #E5E7EB;">Louisiana (1)</td>
@@ -483,7 +483,7 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">2,332</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">153</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$3,199</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$14.80</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$12.58</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$19.98</td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 12px;border-bottom:1px solid #E5E7EB;">ASC Home</td>
@@ -491,7 +491,7 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">2,013</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">103</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$1,488</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$12.58</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$10.70</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$16.99</td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 12px;border-bottom:1px solid #E5E7EB;">Louisiana (3)</td>
@@ -499,7 +499,7 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">1,597</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">115</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$3,089</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$16.99</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$14.44</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$22.94</td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 12px;border-bottom:1px solid #E5E7EB;">Louisiana (2)</td>
@@ -507,7 +507,7 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">1,544</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">106</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$2,590</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$15.28</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$12.99</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$20.63</td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 12px;border-bottom:1px solid #E5E7EB;">Louisiana (4)</td>
@@ -515,7 +515,7 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">574</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">41</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$930</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$16.18</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$13.75</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$21.84</td>
         </tr><tr>
           <td style="font-weight:600;padding:10px 12px;border-bottom:1px solid #E5E7EB;">Louisiana (5-6)</td>
@@ -523,15 +523,15 @@
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">121</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">5</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$166</td>
-          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$18.67</td>
+          <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$15.87</td>
           <td style="text-align:right;padding:10px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$25.21</td>
         </tr></tbody>
         </table>
       </div>
       <div style="font-size:12px;color:var(--g500);margin-top:10px;">
-        T2 Eff = Base &times; 100% &times; 80% sched | T3 Eff = Base &times; 105% &times; 80% sched | T2 1st RPC: $12.31 | T3 1st RPC: $16.44
+        T2 Eff = Base &times; 85% &times; 80% sched | T3 Eff = Base &times; 105% &times; 80% sched | T2 1st RPC: $12.31 | T3 1st RPC: $16.44
       </div>
-      <div class="alert amber" style="margin-top:12px;"><span style="flex-shrink:0;font-size:14px;">&#9888;</span><span><strong>ASC Home Coastal ($14.61 base):</strong> Tier 2 eff bid = $11.69, just below 1st position ($12.31). This is the only ad group where Tier 2 doesn't clear 1st position at 80% schedule. Monitor this group closely; if volume underperforms, consider raising its base bid to $15.50.</span></div>
+      <div class="alert amber" style="margin-top:12px;"><span style="flex-shrink:0;font-size:14px;">&#9888;</span><span><strong>ASC Home Coastal ($14.61 base):</strong> Tier 2 eff bid = $9.93, positioned between 2nd and 1st position ($12.31). At 85% multiplier with 80% schedule, this ad group lands below 1st position as intended by the right-pricing methodology. Monitor this group closely; if volume underperforms, consider raising its base bid to $15.50.</span></div>
       <div class="alert amber"><span style="flex-shrink:0;font-size:14px;">&#9888;</span><span><strong>Potential ad group overlap:</strong> "Louisiana (LA)" targets all of Louisiana while numbered groups target sub-regions. If geographic targeting overlaps, internal bid competition suppresses bid rates. Orchid campaign "700k-1M+ (LA)" also targets Louisiana with 7.7% bid rate on 2,305 Tier 1 opps&mdash;consistent with cross-campaign cannibalization. Verify strict geographic separation.</span></div>
     </div>
   </div>
@@ -558,7 +558,7 @@
 
       <div class="rec blue">
         <div class="rec-head"><span class="rec-name">Phase 3: Full Right-Pricing (Days 10&ndash;21)</span><span class="badge blue">Right-Price &mdash; All Sources</span></div>
-        <p class="rec-detail">After validating Phase 1 and 2 impact, adjust remaining multipliers to right-priced values. Implement in two sub-steps: first reduce over-priced sources (Home Search 345&rarr;200, Home SearchB 150&rarr;90, Tier 2 133&rarr;100), then adjust Tier 1 (136&rarr;70). Phase reductions gradually to avoid sudden volume drops.</p>
+        <p class="rec-detail">After validating Phase 1 and 2 impact, adjust remaining multipliers to right-priced values. Implement in two sub-steps: first reduce over-priced sources (Home Search 345&rarr;135, Home SearchB 150&rarr;75, Tier 2 133&rarr;85), then adjust Tier 1 (136&rarr;55). Phase reductions gradually to avoid sudden volume drops.</p>
         <div class="rec-bid" style="flex-wrap:wrap;gap:8px;">
           <span>Home Search: 345% &rarr; 135%</span>
           <span style="color:var(--g300);">|</span>
@@ -569,7 +569,7 @@
           <span>Tier 1: 136% &rarr; 55%</span>
         </div>
         <p class="rec-detail" style="margin-top:8px;">
-          <strong>Expected savings from multiplier corrections:</strong> Home Search alone saves ~$2,400/month at equivalent volume (effective bid drops from $29.04 to ~$18.86, landing between 2nd and 1st position). Tier 1 reduction saves ~$2,700/month. These savings fund the Tier 3 increase and evening hours expansion.
+          <strong>Expected savings from multiplier corrections:</strong> Home Search alone saves ~$4,300/month at equivalent volume (effective bid drops from $48.19 at 80% schedule to ~$18.86, landing between 2nd and 1st position). Tier 1 reduction saves ~$3,200/month. These savings fund the Tier 3 increase and evening hours expansion.
         </p>
       </div>
 
