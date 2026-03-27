@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cambias Insurance Agency — Campaign Reports</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    background: #FFFFFF;
+    color: #001020;
+    line-height: 1.5;
+    padding: 48px 24px;
+  }
+
+  .container {
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #001020;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .header p {
+    font-size: 14px;
+    color: #6B7280;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .card {
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 0;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card:hover {
+    border-color: #077BE5;
+    box-shadow: 0 4px 16px rgba(7, 123, 229, 0.10);
+  }
+
+  .card-bar {
+    height: 4px;
+    width: 100%;
+  }
+
+  .card-bar.blue { background: #077BE5; }
+  .card-bar.cyan { background: #3AEECA; }
+  .card-bar.light-blue { background: #97C2E8; }
+
+  .card-content {
+    padding: 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .card-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 14px;
+    width: fit-content;
+  }
+
+  .card-badge.internal {
+    background: #EFF6FF;
+    color: #1E40AF;
+  }
+
+  .card-badge.client {
+    background: #ECFDF5;
+    color: #065F46;
+  }
+
+  .card-badge.visual {
+    background: #F0F9FF;
+    color: #0369A1;
+  }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #001020;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .card-desc {
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+
+  .card-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #077BE5;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .card-link:hover {
+    color: #0560B8;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #E5E7EB;
+    color: #9CA3AF;
+    font-size: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    body { padding: 32px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="header">
+    <h1>Cambias Insurance Agency Reports</h1>
+    <p>LA Home Campaign &mdash; March 2026</p>
+  </header>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-bar blue"></div>
+      <div class="card-content">
+        <span class="card-badge internal">Internal Analysis</span>
+        <div class="card-title">Campaign Analysis + Right-Pricing</div>
+        <p class="card-desc">Four-layer diagnostic with full right-pricing calibration. Identifies the two compounding problems throttling spend and provides source-level bid recommendations.</p>
+        <a class="card-link" href="cambias-final-campaign-analysis.html">View report &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-bar cyan"></div>
+      <div class="card-content">
+        <span class="card-badge client">Client Dashboard</span>
+        <div class="card-title">Client Performance Dashboard</div>
+        <p class="card-desc">Client-facing performance overview with KPI tracking, lead volume trends, cost metrics, and source-level performance breakdowns.</p>
+        <a class="card-link" href="cambias-client-dashboard.html">View report &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-bar light-blue"></div>
+      <div class="card-content">
+        <span class="card-badge visual">Internal Roadmap</span>
+        <div class="card-title">Volume Growth Roadmap</div>
+        <p class="card-desc">Internal action plan with prioritized recommendations, schedule optimization strategy, and multiplier recalibration to reach the $1,000/day target.</p>
+        <a class="card-link" href="cambias-final-internal-roadmap.html">View report &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    GOAL Platform &middot; Cambias Insurance Agency &middot; Prepared March 2026
+  </footer>
+
+</div>
+</body>
+</html>

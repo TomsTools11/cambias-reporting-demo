@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cambias — Internal Volume Growth Roadmap (Final)</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; color: #001020; background: #F8F9FC; line-height: 1.6; font-size: 14px; }
+  .ct { max-width: 1080px; margin: 0 auto; padding: 32px 24px 64px; }
+  .hdr { background: #00172D; color: white; border-radius: 12px; padding: 36px 32px; margin-bottom: 28px; }
+  .hdr-tag { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #3AEECA; margin-bottom: 14px; }
+  .hdr h1 { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+  .hdr .sub { font-size: 14px; color: #97C2E8; }
+  .hdr .meta { display: flex; gap: 20px; margin-top: 14px; font-size: 13px; color: #97C2E8; }
+  .cd { background: white; border: 1px solid #E5E7EB; border-radius: 10px; margin-bottom: 20px; overflow: hidden; }
+  .cd-h { padding: 16px 22px 12px; border-bottom: 1px solid #F3F4F6; }
+  .cd-h h2 { font-size: 16px; font-weight: 700; color: #00172D; }
+  .cd-b { padding: 16px 22px 20px; }
+  .kg { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
+  .k { background: #F8F9FC; border: 1px solid #E5E7EB; border-radius: 8px; padding: 14px; text-align: center; }
+  .k .l { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #6B7280; margin-bottom: 2px; }
+  .k .v { font-size: 26px; font-weight: 700; color: #00172D; }
+  .k .s { font-size: 11px; color: #6B7280; margin-top: 2px; }
+  .k.r { border-color: #EF4444; background: #FEF2F2; }
+  .k.b { border-color: #077BE5; background: #EFF6FF; }
+  .k.g { border-color: #10B981; background: #ECFDF5; }
+  .ab { border-radius: 8px; padding: 14px 18px; font-size: 13px; line-height: 1.6; margin-bottom: 14px; border: 1px solid; }
+  .ab.r { background: #FEF2F2; color: #991B1B; border-color: #FECACA; }
+  .ab.b { background: #EFF6FF; color: #1E40AF; border-color: #BFDBFE; }
+  .ab.a { background: #FFFBEB; color: #92400E; border-color: #FDE68A; }
+  .ab.g { background: #ECFDF5; color: #065F46; border-color: #A7F3D0; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table thead th { background: #F8F9FC; color: #6B7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; font-size: 10px; padding: 8px 12px; text-align: left; border-bottom: 2px solid #E5E7EB; }
+  table tbody tr:hover { background: #F9FAFB; }
+  .act { border: 1px solid #E5E7EB; border-radius: 8px; padding: 14px 18px; margin-bottom: 10px; }
+  .act.p1 { border-left: 4px solid #EF4444; }
+  .act.p2 { border-left: 4px solid #077BE5; }
+  .act.p3 { border-left: 4px solid #077BE5; }
+  .act.inv { border-left: 4px solid #F59E0B; }
+  .ft { text-align: center; padding: 20px; color: #9CA3AF; font-size: 12px; }
+  @media print { body { background: white; } .cd { box-shadow: none; break-inside: avoid; } }
+  @media (max-width: 768px) { .kg { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+<div class="ct">
+
+  <header class="hdr">
+    <div class="hdr-tag">Internal Analysis &mdash; Not for Client Distribution</div>
+    <h1>Cambias Home Campaign &mdash; Volume Growth Roadmap (Final)</h1>
+    <p class="sub">Combined 4-Layer Diagnostic + Right-Pricing &middot; Objective: $1,000/day</p>
+    <div class="meta">
+      <span>Prepared March 26, 2026</span>
+      <span>Account Manager: Tom Panos</span>
+      <span>Account #105</span>
+    </div>
+  </header>
+
+  <!-- KPIs -->
+  <div class="kg">
+    <div class="k r"><div class="l">Current Daily Spend</div><div class="v">$647</div><div class="s">Target: $1,000</div></div>
+    <div class="k b"><div class="l">Daily Leads</div><div class="v">31</div><div class="s">928 / 30 days</div></div>
+    <div class="k"><div class="l">Win Rate</div><div class="v">30.9%</div><div class="s">vs 38.7% LY</div></div>
+    <div class="k"><div class="l">Imp Share</div><div class="v">42.1%</div><div class="s">vs 51.8% LY</div></div>
+  </div>
+
+  <!-- DIAGNOSIS -->
+  <div class="cd">
+    <div class="cd-h"><h2>Diagnosis: Two Compounding Problems</h2></div>
+    <div class="cd-b">
+      <div class="ab r"><strong>Problem #1 &mdash; Schedule Suppression (absolute bids):</strong> All bids are reduced to 40&ndash;60% at auction time. The vol-weighted base bid of $17.46 becomes only $9.08 effective. 10 dead hours (9 PM&ndash;5 AM) eliminate all evening/night volume. This alone accounts for ~75% of the spend gap.</div>
+      <div class="ab a"><strong>Problem #2 &mdash; Multiplier Mis-Calibration (relative bids):</strong> Right-pricing reveals source multipliers are inverted vs. market pricing. Tier 3 (most expensive source at $16.44 RPC) has the LOWEST referral multiplier (100%), while Tier 1 (cheapest at $8.33 RPC) has the HIGHEST (136%). The campaign overpays for cheap traffic and underpays for expensive traffic.</div>
+      <div class="ab b"><strong>Combined fix:</strong> Raising the schedule corrects absolute bid levels. Right-pricing the multipliers corrects relative proportions. Together, they maximize volume while improving efficiency. The vol-weighted base bids ($17.46 avg) are already well-calibrated for an 80% schedule&mdash;no base bid changes needed.</div>
+    </div>
+  </div>
+
+  <!-- WATERFALL -->
+  <div class="cd">
+    <div class="cd-h"><h2>Spend Waterfall &mdash; Path to $1,000/day</h2></div>
+    <div class="cd-b">
+      <div style="margin-bottom:10px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+            <span style="font-size:13px;font-weight:600;color:#1F2937;">Current Spend</span>
+            <span style="font-family:monospace;font-size:13px;color:#6B7280;">$647/day </span>
+          </div>
+          <div style="height:24px;background:#F3F4F6;border-radius:4px;position:relative;">
+            <div style="position:absolute;left:0;top:0;height:100%;width:53%;background:#00172D;border-radius:4px;opacity:0.3;"></div>
+          </div>
+        </div><div style="margin-bottom:10px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+            <span style="font-size:13px;font-weight:600;color:#1F2937;">+ Schedule to 80%</span>
+            <span style="font-family:monospace;font-size:13px;color:#6B7280;">$957/day (+$310)</span>
+          </div>
+          <div style="height:24px;background:#F3F4F6;border-radius:4px;position:relative;">
+            <div style="position:absolute;left:0;top:0;height:100%;width:78%;background:#077BE5;border-radius:4px;opacity:1;"></div>
+          </div>
+        </div><div style="margin-bottom:10px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+            <span style="font-size:13px;font-weight:600;color:#1F2937;">+ Tier 3 to 105%</span>
+            <span style="font-family:monospace;font-size:13px;color:#6B7280;">$1,002/day (+$45)</span>
+          </div>
+          <div style="height:24px;background:#F3F4F6;border-radius:4px;position:relative;">
+            <div style="position:absolute;left:0;top:0;height:100%;width:82%;background:#077BE5;border-radius:4px;opacity:1;"></div>
+          </div>
+        </div><div style="margin-bottom:10px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+            <span style="font-size:13px;font-weight:600;color:#1F2937;">+ Evening Hours (9-11pm)</span>
+            <span style="font-family:monospace;font-size:13px;color:#6B7280;">$1,057/day (+$55)</span>
+          </div>
+          <div style="height:24px;background:#F3F4F6;border-radius:4px;position:relative;">
+            <div style="position:absolute;left:0;top:0;height:100%;width:86%;background:#077BE5;border-radius:4px;opacity:1;"></div>
+          </div>
+        </div><div style="margin-bottom:10px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+            <span style="font-size:13px;font-weight:600;color:#1F2937;">+ Orchid Budget $200-300</span>
+            <span style="font-family:monospace;font-size:13px;color:#6B7280;">$1,127/day (+$70)</span>
+          </div>
+          <div style="height:24px;background:#F3F4F6;border-radius:4px;position:relative;">
+            <div style="position:absolute;left:0;top:0;height:100%;width:92%;background:#077BE5;border-radius:4px;opacity:1;"></div>
+          </div>
+        </div><div style="margin-bottom:10px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+            <span style="font-size:13px;font-weight:600;color:#1F2937;">- Multiplier Corrections</span>
+            <span style="font-family:monospace;font-size:13px;color:#6B7280;">$1,067/day (-$60)</span>
+          </div>
+          <div style="height:24px;background:#F3F4F6;border-radius:4px;position:relative;">
+            <div style="position:absolute;left:0;top:0;height:100%;width:87%;background:#10B981;border-radius:4px;opacity:1;"></div>
+          </div>
+        </div>
+      <div style="position:relative;margin-top:6px;height:2px;background:#E5E7EB;border-radius:1px;">
+        <div style="position:absolute;left:81%;top:-6px;width:2px;height:14px;background:#EF4444;"></div>
+        <div style="position:absolute;left:81%;top:10px;font-size:11px;font-weight:600;color:#EF4444;transform:translateX(-50%);">$1,000 target</div>
+      </div>
+      <div style="margin-top:28px;font-size:13px;color:#6B7280;"><strong>Projected:</strong> $1,067/day. The schedule raise accounts for ~65% of needed lift. Right-pricing corrections save ~$60/day by eliminating overpay, partially offsetting the Tier 3 and evening expansions. Net: volume UP, efficiency UP.</div>
+    </div>
+  </div>
+
+  <!-- RIGHT-PRICING QUICK REFERENCE -->
+  <div class="cd">
+    <div class="cd-h"><h2>Right-Pricing Quick Reference (All Multiplier Changes)</h2></div>
+    <div class="cd-b">
+      <div class="ab b"><strong>Anchor:</strong> Tier 2 @ 1st position ($12.31) &mdash; highest-volume source, mid-range cost. 15% geo-buffer applied. Target: $11.85. Market is 90&ndash;95% concentrated at 1st position, so targeting 1st is appropriate for this aggressive-growth client.</div>
+      <table>
+        <thead><tr><th>Source</th><th style="text-align:right;">Current</th><th style="text-align:right;">Right-Priced</th><th style="text-align:right;">Change</th><th style="text-align:right;">New Eff Bid</th></tr></thead>
+        <tbody><tr>
+          <td style="font-weight:600;padding:8px 12px;border-bottom:1px solid #E5E7EB;">Tier 1</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">136%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">70%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-66pp</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$6.98</td>
+        </tr><tr>
+          <td style="font-weight:600;padding:8px 12px;border-bottom:1px solid #E5E7EB;">Tier 2</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">133%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">100%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-33pp</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$13.97</td>
+        </tr><tr>
+          <td style="font-weight:600;padding:8px 12px;border-bottom:1px solid #E5E7EB;">Tier 3</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">100%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">105%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#10B981;">+35pp</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$18.86</td>
+        </tr><tr>
+          <td style="font-weight:600;padding:8px 12px;border-bottom:1px solid #E5E7EB;">Home SearchB</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">150%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">90%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-60pp</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$12.57</td>
+        </tr><tr>
+          <td style="font-weight:600;padding:8px 12px;border-bottom:1px solid #E5E7EB;">Home Search</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">345%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">200%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-145pp</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$27.94</td>
+        </tr><tr>
+          <td style="font-weight:600;padding:8px 12px;border-bottom:1px solid #E5E7EB;">Premium Paid Search 4</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">100%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">65%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-35pp</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$9.08</td>
+        </tr><tr>
+          <td style="font-weight:600;padding:8px 12px;border-bottom:1px solid #E5E7EB;">Internal SEO</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">118%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">70%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-48pp</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$6.98</td>
+        </tr><tr>
+          <td style="font-weight:600;padding:8px 12px;border-bottom:1px solid #E5E7EB;">Premium Referral</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">105%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:700;color:#077BE5;">20%</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;font-weight:600;color:#EF4444;">-85pp</td>
+          <td style="text-align:right;padding:8px 12px;border-bottom:1px solid #E5E7EB;font-family:monospace;">$2.79</td>
+        </tr></tbody>
+      </table>
+      <div style="font-size:11px;color:#9CA3AF;margin-top:8px;">Eff Bid = $17.46 (vol-wtd base) &times; Right-Priced Mult &times; 80% (recommended schedule)</div>
+    </div>
+  </div>
+
+  <!-- MARKET POSITION VISUAL -->
+  <div class="cd">
+    <div class="cd-h"><h2>Market Position: Current vs Right-Priced</h2></div>
+    <div class="cd-b">
+      <div style="margin-bottom:20px;">
+          <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;">
+            <span style="font-weight:600;color:#1F2937;">Tier 2</span>
+            <span style="font-family:monospace;font-size:12px;color:#6B7280;">1st: $12.31</span>
+          </div>
+          <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-bottom:4px;">
+            <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;" title="1st Position"></div>
+            <div style="height:100%;width:45%;background:#DC2626;border-radius:4px;opacity:0.4;" title="Current"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#DC2626;">
+            <div style="width:10px;height:10px;background:#DC2626;border-radius:2px;opacity:0.4;"></div>
+            Current: $12.08 (133% × $17.46 × 52% sched)
+          </div>
+          <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-top:4px;">
+            <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;"></div>
+            <div style="height:100%;width:52%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#077BE5;">
+            <div style="width:10px;height:10px;background:#077BE5;border-radius:2px;"></div>
+            Right-Priced: $13.97 (100% × $17.46 × 80% sched)
+          </div>
+        </div><div style="margin-bottom:20px;">
+          <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;">
+            <span style="font-weight:600;color:#1F2937;">Tier 1</span>
+            <span style="font-family:monospace;font-size:12px;color:#6B7280;">1st: $8.33</span>
+          </div>
+          <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-bottom:4px;">
+            <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;" title="1st Position"></div>
+            <div style="height:100%;width:67%;background:#DC2626;border-radius:4px;opacity:0.4;" title="Current"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#DC2626;">
+            <div style="width:10px;height:10px;background:#DC2626;border-radius:2px;opacity:0.4;"></div>
+            Current: $12.35 (136% × $17.46 × 52% sched)
+          </div>
+          <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-top:4px;">
+            <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;"></div>
+            <div style="height:100%;width:53%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#077BE5;">
+            <div style="width:10px;height:10px;background:#077BE5;border-radius:2px;"></div>
+            Right-Priced: $6.98 (70% × $17.46 × 80% sched)
+          </div>
+        </div><div style="margin-bottom:20px;">
+          <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;">
+            <span style="font-weight:600;color:#1F2937;">Tier 3</span>
+            <span style="font-family:monospace;font-size:12px;color:#6B7280;">1st: $16.44</span>
+          </div>
+          <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-bottom:4px;">
+            <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;" title="1st Position"></div>
+            <div style="height:100%;width:25%;background:#DC2626;border-radius:4px;opacity:0.4;" title="Current"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#DC2626;">
+            <div style="width:10px;height:10px;background:#DC2626;border-radius:2px;opacity:0.4;"></div>
+            Current: $9.08 (100% × $17.46 × 52% sched)
+          </div>
+          <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-top:4px;">
+            <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;"></div>
+            <div style="height:100%;width:52%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#077BE5;">
+            <div style="width:10px;height:10px;background:#077BE5;border-radius:2px;"></div>
+            Right-Priced: $14.67 (105% × $17.46 × 80% sched)
+          </div>
+        </div><div style="margin-bottom:20px;">
+          <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;">
+            <span style="font-weight:600;color:#1F2937;">Home SearchB</span>
+            <span style="font-family:monospace;font-size:12px;color:#6B7280;">1st: $11.31</span>
+          </div>
+          <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-bottom:4px;">
+            <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;" title="1st Position"></div>
+            <div style="height:100%;width:55%;background:#DC2626;border-radius:4px;opacity:0.4;" title="Current"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#DC2626;">
+            <div style="width:10px;height:10px;background:#DC2626;border-radius:2px;opacity:0.4;"></div>
+            Current: $13.62 (150% × $17.46 × 52% sched)
+          </div>
+          <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-top:4px;">
+            <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;"></div>
+            <div style="height:100%;width:51%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#077BE5;">
+            <div style="width:10px;height:10px;background:#077BE5;border-radius:2px;"></div>
+            Right-Priced: $12.57 (90% × $17.46 × 80% sched)
+          </div>
+        </div><div style="margin-bottom:20px;">
+          <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;">
+            <span style="font-weight:600;color:#1F2937;">Home Search</span>
+            <span style="font-family:monospace;font-size:12px;color:#6B7280;">1st: $24.57</span>
+          </div>
+          <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-bottom:4px;">
+            <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;" title="1st Position"></div>
+            <div style="height:100%;width:58%;background:#DC2626;border-radius:4px;opacity:0.4;" title="Current"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#DC2626;">
+            <div style="width:10px;height:10px;background:#DC2626;border-radius:2px;opacity:0.4;"></div>
+            Current: $31.32 (345% × $17.46 × 52% sched)
+          </div>
+          <div style="position:relative;height:16px;background:#F3F4F6;border-radius:4px;margin-top:4px;">
+            <div style="position:absolute;left:45%;top:-2px;bottom:-2px;width:2px;background:#16A34A;z-index:3;"></div>
+            <div style="height:100%;width:52%;background:#077BE5;border-radius:4px;" title="Recommended"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#077BE5;">
+            <div style="width:10px;height:10px;background:#077BE5;border-radius:2px;"></div>
+            Right-Priced: $27.94 (200% × $17.46 × 80% sched)
+          </div>
+        </div>
+      <div style="display:flex;gap:14px;margin-top:14px;padding-top:10px;border-top:1px solid #F3F4F6;font-size:11px;color:#6B7280;">
+        <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;background:#DC2626;border-radius:2px;opacity:0.4;"></div> Current</div>
+        <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;background:#077BE5;border-radius:2px;"></div> Right-Priced</div>
+        <div style="display:flex;align-items:center;gap:4px;"><div style="width:2px;height:8px;background:#16A34A;"></div> 1st Position</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTION PLAN -->
+  <div class="cd">
+    <div class="cd-h"><h2>Implementation Plan (Phase 0 + 3 Phases)</h2></div>
+    <div class="cd-b">
+
+      <div class="act" style="border-left:3px solid #DC2626;padding-left:14px;margin-bottom:12px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <strong style="font-size:15px;">Phase 0: Swap Gender Modifiers &amp; Disable Device Overlays (Day 0)</strong>
+          <span style="background:#FEF2F2;color:#DC2626;padding:3px 8px;border-radius:10px;font-size:11px;font-weight:700;">DO TODAY</span>
+        </div>
+        <p style="font-size:13px;color:#4B5563;">Swap Female+Desktop from 80% &rarr; <strong>120%</strong> and Male+Desktop from 120% &rarr; <strong>80%</strong>. Female leads are 37% more CPA-efficient ($739 vs $1,160) &mdash; the current modifiers penalize the better-performing gender. Also disable the Gender&times;Device modifier groups entirely (or set all to 100%) and run a 14-day test to determine if desktop is recoverable at a 9.2% win rate. Zero cost change, expected +25&ndash;38 leads/month.</p>
+      </div>
+
+      <div class="act p1">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <strong style="font-size:15px;">Phase 1: Raise Schedule to 80% (Days 1&ndash;5)</strong>
+          <span style="background:#FEF2F2;color:#EF4444;padding:3px 8px;border-radius:10px;font-size:11px;font-weight:600;">Immediate</span>
+        </div>
+        <p style="font-size:13px;color:#4B5563;">Peak hours (8am-6pm): 50-60% &rarr; 80%. Early morning (5-7am): 45-55% &rarr; 65%. Add 9-11pm at 35%. Keep all source multipliers unchanged. Monitor daily spend, win rate, lead volume. Expected: ~$940-1,000/day.</p>
+      </div>
+
+      <div class="act p2">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <strong style="font-size:15px;">Phase 2: Tier 3 Multiplier 100% &rarr; 105% (Days 5&ndash;10)</strong>
+          <span style="background:#EFF6FF;color:#1E40AF;padding:3px 8px;border-radius:10px;font-size:11px;font-weight:600;">Right-Price</span>
+        </div>
+        <p style="font-size:13px;color:#4B5563;">Most impactful single multiplier fix. 692 opps at 9.2% win rate &rarr; targeting 30-50% win rate. Tier 3 1st RPC ($16.44) is the highest referral source but has the lowest multiplier. New eff bid: $18.86 (above 1st with geo-buffer). Monitor Tier 3 win rate daily.</p>
+      </div>
+
+      <div class="act p3">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <strong style="font-size:15px;">Phase 3: Full Right-Pricing (Days 10&ndash;21)</strong>
+          <span style="background:#EFF6FF;color:#1E40AF;padding:3px 8px;border-radius:10px;font-size:11px;font-weight:600;">Right-Price</span>
+        </div>
+        <p style="font-size:13px;color:#4B5563;">Step A (Day 10): Home Search 345&rarr;200, Home SearchB 150&rarr;90, Tier 2 133&rarr;100. Step B (Day 14): Tier 1 136&rarr;100, then (Day 18): Tier 1 100&rarr;70. Phasing the Tier 1 reduction prevents sudden volume shock on the highest-opportunity source. PPS4: 100&rarr;65, Internal SEO: 118&rarr;70, Premium Referral: 105&rarr;20.</p>
+      </div>
+
+      <div class="act inv">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <strong style="font-size:15px;">Parallel: Investigate Ad Group Overlap + Orchid</strong>
+          <span style="background:#FFFBEB;color:#92400E;padding:3px 8px;border-radius:10px;font-size:11px;font-weight:600;">Investigate</span>
+        </div>
+        <p style="font-size:13px;color:#4B5563;">Pull zip code lists for all 8 ad groups + Orchid. Verify zero geographic overlap. Orchid Tier 1 bid rate (7.7% on 2,305 opps) screams cannibalization. After resolution: raise Orchid daily cap to $200-300, right-price Orchid multipliers separately (different base bid of $9.44 requires different multiplier values: T2 150%, T3 200%, Home Search 300%).</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCHEDULE VISUAL -->
+  <div class="cd">
+    <div class="cd-h"><h2>Current Schedule (Home Leads &mdash; Monday)</h2></div>
+    <div class="cd-b">
+      <div style="display:flex;align-items:flex-end;height:90px;gap:0;border-bottom:2px solid #E5E7EB;margin-bottom:10px;"><div style="flex:1;text-align:center;"><div style="height:0.0px;background:#DC2626;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">12a</div><div style="font-size:9px;font-weight:600;color:#DC2626;">0%</div></div><div style="flex:1;text-align:center;"><div style="height:0.0px;background:#DC2626;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">1a</div><div style="font-size:9px;font-weight:600;color:#DC2626;">0%</div></div><div style="flex:1;text-align:center;"><div style="height:0.0px;background:#DC2626;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">2a</div><div style="font-size:9px;font-weight:600;color:#DC2626;">0%</div></div><div style="flex:1;text-align:center;"><div style="height:0.0px;background:#DC2626;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">3a</div><div style="font-size:9px;font-weight:600;color:#DC2626;">0%</div></div><div style="flex:1;text-align:center;"><div style="height:0.0px;background:#DC2626;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">4a</div><div style="font-size:9px;font-weight:600;color:#DC2626;">0%</div></div><div style="flex:1;text-align:center;"><div style="height:31.499999999999996px;background:#D97706;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">5a</div><div style="font-size:9px;font-weight:600;color:#D97706;">45%</div></div><div style="flex:1;text-align:center;"><div style="height:38.5px;background:#0479DF;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">6a</div><div style="font-size:9px;font-weight:600;color:#0479DF;">55%</div></div><div style="flex:1;text-align:center;"><div style="height:38.5px;background:#0479DF;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">7a</div><div style="font-size:9px;font-weight:600;color:#0479DF;">55%</div></div><div style="flex:1;text-align:center;"><div style="height:38.5px;background:#0479DF;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">8a</div><div style="font-size:9px;font-weight:600;color:#0479DF;">55%</div></div><div style="flex:1;text-align:center;"><div style="height:38.5px;background:#0479DF;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">9a</div><div style="font-size:9px;font-weight:600;color:#0479DF;">55%</div></div><div style="flex:1;text-align:center;"><div style="height:38.5px;background:#0479DF;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">10a</div><div style="font-size:9px;font-weight:600;color:#0479DF;">55%</div></div><div style="flex:1;text-align:center;"><div style="height:39.9px;background:#0479DF;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">11a</div><div style="font-size:9px;font-weight:600;color:#0479DF;">57%</div></div><div style="flex:1;text-align:center;"><div style="height:42.0px;background:#0479DF;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">12p</div><div style="font-size:9px;font-weight:600;color:#0479DF;">60%</div></div><div style="flex:1;text-align:center;"><div style="height:35.0px;background:#0479DF;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">1p</div><div style="font-size:9px;font-weight:600;color:#0479DF;">50%</div></div><div style="flex:1;text-align:center;"><div style="height:38.5px;background:#0479DF;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">2p</div><div style="font-size:9px;font-weight:600;color:#0479DF;">55%</div></div><div style="flex:1;text-align:center;"><div style="height:42.0px;background:#0479DF;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">3p</div><div style="font-size:9px;font-weight:600;color:#0479DF;">60%</div></div><div style="flex:1;text-align:center;"><div style="height:35.0px;background:#0479DF;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">4p</div><div style="font-size:9px;font-weight:600;color:#0479DF;">50%</div></div><div style="flex:1;text-align:center;"><div style="height:38.5px;background:#0479DF;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">5p</div><div style="font-size:9px;font-weight:600;color:#0479DF;">55%</div></div><div style="flex:1;text-align:center;"><div style="height:31.499999999999996px;background:#D97706;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">6p</div><div style="font-size:9px;font-weight:600;color:#D97706;">45%</div></div><div style="flex:1;text-align:center;"><div style="height:29.4px;background:#D97706;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">7p</div><div style="font-size:9px;font-weight:600;color:#D97706;">42%</div></div><div style="flex:1;text-align:center;"><div style="height:28.0px;background:#D97706;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">8p</div><div style="font-size:9px;font-weight:600;color:#D97706;">40%</div></div><div style="flex:1;text-align:center;"><div style="height:0.0px;background:#DC2626;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">9p</div><div style="font-size:9px;font-weight:600;color:#DC2626;">0%</div></div><div style="flex:1;text-align:center;"><div style="height:0.0px;background:#DC2626;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">10p</div><div style="font-size:9px;font-weight:600;color:#DC2626;">0%</div></div><div style="flex:1;text-align:center;"><div style="height:0.0px;background:#DC2626;border-radius:3px 3px 0 0;margin:0 1px;"></div><div style="font-size:8px;color:#6B7280;margin-top:3px;">11p</div><div style="font-size:9px;font-weight:600;color:#DC2626;">0%</div></div></div>
+      <div style="font-size:12px;color:#6B7280;">Blue = 50%+ modifier | Amber = &lt;50% | Red = 0% (off). Average active-hour modifier: 52%. Recommended: raise blue bars to 80%, add 9-11pm at 35%.</div>
+    </div>
+  </div>
+
+  <!-- SETTINGS SUMMARY -->
+  <div class="cd">
+    <div class="cd-h"><h2>Current Campaign Settings</h2></div>
+    <div class="cd-b">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+        <div>
+          <h3 style="font-size:13px;font-weight:700;color:#00172D;margin-bottom:10px;">Targeting Filters</h3>
+          <div style="font-size:13px;color:#4B5563;line-height:2;">
+            Property Type &ne; Mobile Home, Apartment (accept if unknown)<br>
+            Credit Rating &ne; Poor (accept if unknown)<br>
+            Current Carrier &ne; Allstate (accept if unknown)<br>
+            <strong>Orchid adds:</strong> Age &ge; 25
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:13px;font-weight:700;color:#00172D;margin-bottom:10px;">Bid Modifiers</h3>
+          <div style="font-size:13px;color:#4B5563;line-height:2;">
+            Progressive / GEICO / Liberty Mutual &rarr; <span style="color:#077BE5;font-weight:600;">115%</span><br>
+            State Farm &rarr; <span style="color:#F59E0B;font-weight:600;">80%</span><br>
+            Female + Desktop &rarr; <span style="color:#F59E0B;font-weight:600;">80%</span><br>
+            Male + Desktop &rarr; <span style="color:#077BE5;font-weight:600;">120%</span>
+          </div>
+        </div>
+      </div>
+      <div class="ab g" style="margin-top:14px;"><strong>Assessment:</strong> Targeting is lean and appropriate. No over-filtering detected. Bid modifiers are reasonable preference signals. No changes recommended.</div>
+    </div>
+  </div>
+
+  
+  <!-- MODIFIER & TARGETING QUICK REFERENCE -->
+  <div class="cd">
+    <div class="ch" style="border-left:4px solid #DC2626;">
+      <span class="ci" style="background:#DC2626;">!</span>
+      <span class="ct">Modifier &amp; Targeting Audit</span>
+    </div>
+    <div class="cb">
+      <p class="pr"><strong>Key finding:</strong> Gender modifiers are inverted. Female leads are 37% more efficient (CPA $739 vs $1,160) but bidded down to 80%. Device&times;gender overlays amplify a structural desktop problem (9.2% win rate).</p>
+
+      <!-- Quick action cards -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;">
+        <div style="background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:12px;">
+          <div style="font-size:11px;font-weight:700;color:#dc2626;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Day 0: Swap Gender Modifiers</div>
+          <div style="font-size:12px;color:var(--g700);line-height:1.5;">
+            Female+Desktop: 80% &rarr; <strong>120%</strong><br>
+            Male+Desktop: 120% &rarr; <strong>80%</strong><br>
+            <span style="color:#16a34a;font-weight:600;">+25&ndash;38 leads/mo at $0 cost</span>
+          </div>
+        </div>
+        <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:12px;">
+          <div style="font-size:11px;font-weight:700;color:#d97706;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Days 1&ndash;14: Device Test</div>
+          <div style="font-size:12px;color:var(--g700);line-height:1.5;">
+            Disable Gender&times;Device modifier groups<br>
+            Monitor desktop win rate for 14 days<br>
+            <span style="color:#d97706;font-weight:600;">Determines if desktop recoverable</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Audit summary table -->
+      <table style="width:100%;border-collapse:collapse;font-size:11px;margin-top:10px;">
+        <thead>
+          <tr style="background:var(--g50);">
+            <th style="padding:8px;text-align:left;border-bottom:2px solid var(--g200);font-weight:700;font-size:10px;text-transform:uppercase;color:var(--g400);">Setting</th>
+            <th style="padding:8px;text-align:center;border-bottom:2px solid var(--g200);font-weight:700;font-size:10px;text-transform:uppercase;color:var(--g400);">Status</th>
+            <th style="padding:8px;text-align:left;border-bottom:2px solid var(--g200);font-weight:700;font-size:10px;text-transform:uppercase;color:var(--g400);">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:6px 8px;border-bottom:1px solid var(--g100);">Gender Mods (F+D / M+D)</td><td style="padding:6px 8px;border-bottom:1px solid var(--g100);text-align:center;color:#dc2626;font-weight:700;">SWAP</td><td style="padding:6px 8px;border-bottom:1px solid var(--g100);">F&rarr;120%, M&rarr;80%</td></tr>
+          <tr><td style="padding:6px 8px;border-bottom:1px solid var(--g100);">Device Overlays (G&times;D)</td><td style="padding:6px 8px;border-bottom:1px solid var(--g100);text-align:center;color:#d97706;font-weight:700;">TEST</td><td style="padding:6px 8px;border-bottom:1px solid var(--g100);">Disable for 14 days</td></tr>
+          <tr><td style="padding:6px 8px;border-bottom:1px solid var(--g100);">Carrier Mods (PG/GEICO/LM 115%, SF 80%)</td><td style="padding:6px 8px;border-bottom:1px solid var(--g100);text-align:center;color:#16a34a;font-weight:700;">KEEP</td><td style="padding:6px 8px;border-bottom:1px solid var(--g100);">Strategically sound</td></tr>
+          <tr><td style="padding:6px 8px;border-bottom:1px solid var(--g100);">Mobile Home / Poor Credit Exclusion</td><td style="padding:6px 8px;border-bottom:1px solid var(--g100);text-align:center;color:#16a34a;font-weight:700;">KEEP</td><td style="padding:6px 8px;border-bottom:1px solid var(--g100);">Low volume, protects quality</td></tr>
+          <tr><td style="padding:6px 8px;border-bottom:1px solid var(--g100);">Apartment Exclusion</td><td style="padding:6px 8px;border-bottom:1px solid var(--g100);text-align:center;color:#d97706;font-weight:700;">TEST</td><td style="padding:6px 8px;border-bottom:1px solid var(--g100);">If needed: include at 60&ndash;70% mod after other changes</td></tr>
+          <tr><td style="padding:6px 8px;">Allstate Exclusion</td><td style="padding:6px 8px;text-align:center;color:#d97706;font-weight:700;">VALIDATE</td><td style="padding:6px 8px;">Pull CRM data, test if warranted</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<div class="ft">GOAL Platform &middot; Internal Analysis &middot; Confidential<br>Generated March 26, 2026 &middot; Tom Panos</div>
+</div>
+</body>
+</html>
